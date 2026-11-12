@@ -1,0 +1,138 @@
+.grid-root {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+  background-color: var(--cell-bg);
+}
+
+.grid-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--hdr-bg);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.grid-col-hdr-frozen {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  background-color: var(--hdr-bg);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  z-index: 9;
+}
+
+.grid-col-hdr-scroll {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  background-color: var(--hdr-bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 8;
+}
+
+.grid-row-hdr-frozen {
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  background-color: var(--hdr-bg);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  z-index: 9;
+}
+
+.grid-row-hdr-scroll {
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  background-color: var(--hdr-bg);
+  border-right: 1px solid var(--border);
+  z-index: 7;
+}
+
+.grid-corner-cells {
+  position: absolute;
+  overflow: hidden;
+  background-color: var(--cell-bg);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  z-index: 8;
+}
+
+.grid-frozen-rows {
+  position: absolute;
+  overflow: hidden;
+  background-color: var(--cell-bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 7;
+}
+
+.grid-frozen-cols {
+  position: absolute;
+  overflow: hidden;
+  background-color: var(--cell-bg);
+  border-right: 1px solid var(--border);
+  z-index: 6;
+}
+
+.grid-scroller {
+  position: absolute;
+  overflow: auto;
+  touch-action: pan-x pan-y;
+  background-color: var(--cell-bg);
+  z-index: 1;
+}
+
+.hdr-cell {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--hdr-fg);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.hdr-cell.selected {
+  background-color: var(--hdr-sel-bg);
+  color: var(--hdr-sel-fg);
+  font-weight: 600;
+}
+
+.cell-view {
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  padding: 0 4px;
+  font-size: 11px;
+  line-height: 1.2;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cell-view.wrap {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.selection-ring {
+  position: absolute;
+  border: 2px solid var(--sel);
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 5;
+}

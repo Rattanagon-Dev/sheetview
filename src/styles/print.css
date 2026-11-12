@@ -1,0 +1,53 @@
+#print-root {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: landscape;
+    margin: 10mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  #app {
+    display: none !important;
+  }
+
+  #print-root {
+    display: block !important;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  table.print-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 9pt;
+  }
+
+  table.print-table thead {
+    display: table-header-group;
+  }
+
+  table.print-table tr {
+    page-break-inside: avoid;
+  }
+
+  table.print-table th,
+  table.print-table td {
+    padding: 3px 5px;
+    border: 1px solid #d1d1d6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  table.print-table th {
+    background-color: #f2f2f7 !important;
+    font-weight: 600;
+    text-align: center;
+  }
+}

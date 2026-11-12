@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Production build (ignored on main branch; gh-pages deploys this directly)
+dist/
+
+# Logs & temp
+*.log
+.DS_Store
+.cache/
